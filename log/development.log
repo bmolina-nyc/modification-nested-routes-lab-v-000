@@ -2717,3 +2717,106 @@ Processing by SongsController#new as HTML
   Rendered songs/_form.html.erb (2.5ms)
   Rendered songs/new.html.erb within layouts/application (3.3ms)
 Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/songs/new" for ::1 at 2016-11-20 23:33:48 -0500
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (12.5ms)
+  Rendered songs/new.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `artist_id_field' for #<#<Class:0x007f9c9b9aaf58>:0x007f9c9a413208>):
+    1: <%= form_for @song  do |f| %>
+    2: <%= artist_id_field(@song) %>
+    3: <br>
+    4:   <%= f.label :title %>
+    5:   <%= f.text_field :title %><br>
+  app/views/songs/_form.html.erb:2:in `block in _app_views_songs__form_html_erb__1125559083917292782_70155301131420'
+  app/views/songs/_form.html.erb:1:in `_app_views_songs__form_html_erb__1125559083917292782_70155301131420'
+  app/views/songs/new.html.erb:2:in `_app_views_songs_new_html_erb__350169975192842242_70155235103360'
+
+
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.6ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (35.2ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/brucemolina/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (77.6ms)
+
+
+Started GET "/songs/new" for ::1 at 2016-11-20 23:35:58 -0500
+Processing by SongsController#new as HTML
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  Rendered songs/_form.html.erb (8.4ms)
+  Rendered songs/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-20 23:35:58 -0500
+
+
+Started GET "/artists/1/songs/new" for ::1 at 2016-11-20 23:36:09 -0500
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mArtist Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.2ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/_form.html.erb (6.1ms)
+  Rendered songs/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/artists/1/songs/new" for ::1 at 2016-11-20 23:36:09 -0500
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[35mArtist Exists (0.3ms)[0m  SELECT  1 AS one FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/_form.html.erb (3.9ms)
+  Rendered songs/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/artists/1/songs/new" for ::1 at 2016-11-20 23:38:15 -0500
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mArtist Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/_form.html.erb (7.3ms)
+  Rendered songs/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 24ms (Views: 14.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-20 23:38:15 -0500
+
+
+Started GET "/artists/1/songs/new" for ::1 at 2016-11-20 23:38:16 -0500
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[35mArtist Exists (0.1ms)[0m  SELECT  1 AS one FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT "artists".* FROM "artists"[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/_form.html.erb (3.7ms)
+  Rendered songs/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-11-20 23:38:16 -0500
+
+
+Started GET "/artists/1/songs/new" for ::1 at 2016-11-20 23:49:27 -0500
+Processing by SongsController#new as HTML
+  Parameters: {"artist_id"=>"1"}
+  [1m[36mArtist Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mArtist Load (0.4ms)[0m  SELECT "artists".* FROM "artists"
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered songs/_form.html.erb (10.6ms)
+  Rendered songs/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 28ms (Views: 19.1ms | ActiveRecord: 1.1ms)
