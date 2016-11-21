@@ -58,6 +58,7 @@ class SongsController < ApplicationController
       end
     else
       @song = Song.find(params[:id])
+      @nested = false 
     end
   end
 
